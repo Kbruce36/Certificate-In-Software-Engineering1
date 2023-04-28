@@ -24,3 +24,12 @@ header{
 #btn{
   background-color :orange;
 }
+#flash_message{
+  color: green;
+  background: aliceblue;
+  width: 60%;
+  text-align: center;
+  margin:1% 20%;
+  padding-top: 5px;
+
+}
