@@ -7,9 +7,24 @@
   <div class="container1">
     <header>GENQ KYC FORM</header>
 </div>
+<div id="pagecontent" class="container-fluid">
+  {% if messages %}
+  <div id="flash_message" class="container-fluid">
+      <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+              <p class="messages">{{message}}</p>
+          </li>
+          {% endfor %}
+
+      </ul>
+      <button class="btn btn-outline-danger" id="btn1" onclick="hide('flash_message')">Close</button>
+  </div>
+  {% endif %}
 <br><br>
     
     <form action="{% url 'registration' %}" method="POST" enctype="multipart/form-data">
+      
         {% csrf_token %}
         <h4>Bio data</h4><hr>
         <div class="row mb-4">

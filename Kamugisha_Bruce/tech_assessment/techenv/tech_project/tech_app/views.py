@@ -5,22 +5,21 @@ from django.contrib import messages
 def index(request):
     return render(request, 'index.html')
 
-    
 def registration(request):
-    form = RegistrationForm()
     if request.method == "POST":
-        form = RegistrationForm(request.POST)
+        form = RegistrationForm(request.POST or None)
         if form.is_valid():
-            zip_code = form.cleaned_data.get('zip_code')
-            if not zip_code.isnumeric() or len(zip_code) != 5:
-                messages.error(request, "Invalid zip code. Please enter a valid 5-digit zip code.")
-                return render(request, 'index.html', {'form': form})
             form.save()
-            messages.success(request, "Your form has been submitted successfully.")
-            return redirect('success')
+            messages.success(request, ("your form has been submitted successfully."))
+            return redirect('home')
+            
         else:
-            messages.error(request, "There was an error in your submission.")
-    return render(request, 'index.html', {'form': form})
+            messages.success(request, "there was an error in your submission.")
+            return render(request,'index.html')
+          
+        #always remember to redirect to a view that handles the page and not the page
+    else:
+        return render(request, 'index.html', {'form':form})
     
 
 def home(request):
