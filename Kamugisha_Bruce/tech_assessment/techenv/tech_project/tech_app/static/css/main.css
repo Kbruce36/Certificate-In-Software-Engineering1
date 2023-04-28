@@ -1,0 +1,16 @@
+.container1{
+  background-color: black;
+  color: aliceblue;
+  padding: 15px;
+  font-size: 32px;
+  justify-content: center;
+}
+
+.form1{
+  display: inline-block;
+
+}
+
+.btn{
+  float: right;
+}

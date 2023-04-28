@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br><br><br><br>
+<div class="container">
+  <div class="container1">
+    <header>GENQ KYC FORM</header>
+</div>
+<br><br>
+    
+    <form action="{% url 'registration' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h4>Bio data</h4><hr>
+        <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" placeholder="First name" required/>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" placeholder="Last name" required/>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="date" id="form3Example1" class="form-control" placeholder="Date of birth" required/>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" placeholder="Gender" required/>
+
+              </div>
+            </div>
+          </div>
+          <br><h4>Location</h4>
+          <hr>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" placeholder="country" required/>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" placeholder="State/district" required/>
+
+              </div>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" placeholder="Town" required/>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" placeholder="Zipcode" required/>
+
+              </div>
+            </div>
+          </div>
+          <br><h4>Contacts and Address</h4>
+          <hr>
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" placeholder="Phone number 1" required/>
+
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <input type="text" id="form3Example2" class="form-control" placeholder="Phone number 2" required/>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 form">
+            <input type="email" class="form-control" required placeholder="Email" required>
+          </div>
+        <br><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{% endblock %}
